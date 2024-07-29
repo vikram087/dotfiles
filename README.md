@@ -1,4 +1,4 @@
-This is the directory for all my configuration files both on windows and unix machines:
+This is the directory for all my configuration files both on Windows and Unix machines:
 
 TMUX
 GIT
