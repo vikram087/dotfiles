@@ -1,8 +1,21 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = ## NAME HERE
-	email = ## EMAIL HERE
+	name = vikrampe
+	email = vikram.penumarti@fiery.com
 
 [core]
 	editor = vim
+
+[alias]
+    po = "!f() { echo git push origin \"$@\"; git push origin \"$@\"; }; f"
+    c = "!f() { echo git checkout \"$@\"; git checkout \"$@\"; }; f"
+    f = "!f() { echo git fetch origin \"$@\"; git fetch origin \"$@\"; }; f"
+    cm = "!f() { echo git commit -m \"$*\"; git commit -m \"$*\"; }; f"
+    ps = "!f() { echo git push --set-upstream origin \"$@\"; git push --set-upstream origin \"$@\"; }; f"
+    p = "!f() { echo git pull origin \"$@\"; git pull origin \"$@\"; }; f"
+    s = "!f() { echo git status \"$@\"; git status \"$@\"; }; f"
+    b = "!f() { echo git branch \"$@\"; git branch \"$@\"; }; f"
+    del = "!f() { echo git push origin --delete \"$@\"; git push origin --delete \"$@\"; }; f"
+    a = "!f() { echo git add --all \"$@\"; git add --all \"$@\"; }; f"
+    fp = "!f() { echo git fetch --prune \"$@\"; git fetch --prune \"$@\"; }; f"
