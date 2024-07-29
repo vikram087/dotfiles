@@ -199,17 +199,7 @@ function td() { echo "terraform destroy -auto-approve $@"; terraform destroy -au
 function ta() { echo "terraform apply -auto-approve $@"; terraform apply -auto-approve "$@"; }
 function ti() { echo "terraform init $@"; terraform init $@; }
 
-function gpo() { echo "git push origin $@"; git push origin $@; }
-function gc() { echo "git checkout $@"; git checkout $@; }
-function gf() { echo "git fetch origin $@"; git fetch origin $@; }
-function gcm() { echo "git commit -m \"$@\""; git commit -m "$@"; }
-function gps() { echo "git push --set-upstream origin $@"; git push --set-upstream origin $@; }
-function gp() { echo "git pull origin $@"; git pull origin $@; }
-function gs() { echo "git status $@"; git status $@; }
-function gb() { echo "git branch $@"; git branch $@; }
-function gdel() { echo "git push origin --delete $@"; git push origin --delete $@; }
-function ga() { echo "git add --all $@"; git add --all $@; }
-function gfp() { echo "git fetch --prune $@"; git fetch --prune $@; }
+alias g="git"
 
 check-alias() {
     case "$1" in
@@ -230,17 +220,18 @@ check-alias() {
             echo 'ti() { echo "terraform init $@"; terraform init "$@"; }'
             ;;
         --git)
-            echo 'gpo() { echo "git push origin $@"; git push origin "$@"; }'
-            echo 'gc() { echo "git checkout $@"; git checkout "$@"; }'
-            echo 'gf() { echo "git fetch origin $@"; git fetch origin "$@"; }'
-            echo 'gcm() { echo "git commit -m \"$@\""; git commit -m "$@"; }'
-            echo 'gps() { echo "git push --set-upstream origin $@"; git push --set-upstream origin "$@"; }'
-            echo 'gp() { echo "git pull origin $@"; git pull origin "$@"; }'
-            echo 'gs() { echo "git status $@"; git status "$@"; }'
-            echo 'gb() { echo "git branch $@"; git branch "$@"; }'
-            echo 'gdel() { echo "git push origin --delete $@"; git push origin --delete "$@"; }'
-	    echo 'function ga() { echo "git add --all $@"; git add --all $@; }'
-	    echo 'function gfp() { echo "git fetch --prune $@"; git fetch --prune $@; }'
+	    echo 'po = "!f() { echo git push origin \"$@\"; git push origin \"$@\"; }; f"'
+	    echo 'c = "!f() { echo git checkout \"$@\"; git checkout \"$@\"; }; f"'
+	    echo 'f = "!f() { echo git fetch origin \"$@\"; git fetch origin \"$@\"; }; f"'
+	    echo 'cm = "!f() { echo git commit -m \"$*\"; git commit -m \"$*\"; }; f"'
+	    echo 'ps = "!f() { echo git push --set-upstream origin \"$@\"; git push --set-upstream origin \"$@\"; }; f"'
+	    echo 'p = "!f() { echo git pull origin \"$@\"; git pull origin \"$@\"; }; f"'
+	    echo 's = "!f() { echo git status \"$@\"; git status \"$@\"; }; f"'
+	    echo 'b = "!f() { echo git branch \"$@\"; git branch \"$@\"; }; f"'
+	    echo 'del = "!f() { echo git push origin --delete \"$@\"; git push origin --delete \"$@\"; }; f"'
+	    echo 'a = "!f() { echo git add --all \"$@\"; git add --all \"$@\"; }; f"'
+	    echo 'fp = "!f() { echo git fetch --prune \"$@\"; git fetch --prune \"$@\"; }; f"'
+	    echo 'alias g="git"'
             ;;
         *)
             check-alias --tmux
