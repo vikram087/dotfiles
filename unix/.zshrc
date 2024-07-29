@@ -128,7 +128,7 @@ function ti() { echo "terraform init $@"; terraform init $@; }
 function gpo() { echo "git push origin $@"; git push origin $@; }
 function gc() { echo "git checkout $@"; git checkout $@; }
 function gf() { echo "git fetch origin $@"; git fetch origin $@; }
-function gcm() { echo "git commit -m \"$@\""; git commit -m "$@"; }
+function gcm() { echo "git commit -m \"$*\""; git commit -m "$*"; }
 function gps() { echo "git push --set-upstream origin $@"; git push --set-upstream origin $@; }
 function gp() { echo "git pull origin $@"; git pull origin $@; }
 function gs() { echo "git status $@"; git status $@; }
@@ -159,7 +159,7 @@ check-alias() {
             echo 'gpo() { echo "git push origin $@"; git push origin "$@"; }'
             echo 'gc() { echo "git checkout $@"; git checkout "$@"; }'
             echo 'gf() { echo "git fetch origin $@"; git fetch origin "$@"; }'
-            echo 'gcm() { echo "git commit -m \"$@\""; git commit -m "$@"; }'
+            echo 'gcm() { echo "git commit -m \"$*\""; git commit -m "$*"; }'
             echo 'gps() { echo "git push --set-upstream origin $@"; git push --set-upstream origin "$@"; }'
             echo 'gp() { echo "git pull origin $@"; git pull origin "$@"; }'
             echo 'gs() { echo "git status $@"; git status "$@"; }'
