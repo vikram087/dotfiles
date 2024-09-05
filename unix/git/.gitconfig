@@ -4,8 +4,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [user]
-	name = ###
-	email = ###
+	name = Vikram Penumarti
+	email = vikram.penumarti@gmail.com
 [core]
     pager = delta
 
