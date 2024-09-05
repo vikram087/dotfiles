@@ -6,7 +6,7 @@
 
 [core]
     editor = vim
-    autocrlf = input
+	autocrlf = input
 
 [alias]
     po = "!f() { echo git push origin \"$@\"; git push origin \"$@\"; }; f"

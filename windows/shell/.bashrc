@@ -243,7 +243,20 @@ check-alias() {
     esac
 }
 
-eval "$(zoxide init --cmd cd bash)"
+#eval "$(zoxide init --cmd cd bash)"
+eval "$(zoxide init bash)"
+
+function cd() { 
+    z "$@"; 
+    pwd; 
+    echo ""; 
+    count=$(ls -1Aa | wc -l); 
+    if [ "$count" -lt 50 ]; then 
+        ls -a; 
+    else 
+        echo "More than 50 files, skipping 'ls'"; 
+    fi 
+}
 
 if [[ $TERM == "screen" ]]; then
   export TERM=screen-256color
